@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="4.css">
+</head>
+<body>
+
+    <div class="alert-box" id="alert">
+        <p>Alert 박스</p>
+        <button onclick="알림창닫기('none')">닫기
+        </button>
+    </div>
+    <button onclick="알림창열기('block')">버튼
+    </button>
+
+
+    <script>
+
+        function 알림창열기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+        function 알림창닫기(구멍){
+            document.getElementById('alert').style.display = 구멍;
+        }
+
+
+        /*
+        1. 콤마로 구분, 2. 자유작명
+        function 알림창열기(구멍, 구멍2){
+            document.getElementById(구멍2)..style.display = 구멍;
+        }
+
+        알림창열기('어쩌구', '저쩌구')
+
+        function plus(구멍){
+            2 + 구멍
+        }
+
+        plus(1);
+        plus(2);
+        plus(3);
+
+        
+        function plus2(){
+            2 + 2
+        }
+
+        function plus3(){
+            2 + 3
+        }
+        */
+    
+       
+
+
+
+
+    </script>
+
+</body>
+</html>
