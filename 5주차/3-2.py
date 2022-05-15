@@ -1,22 +1,21 @@
-import requests
-import json
+def make_dolcelatte():
+    print("1. 얼음을 넣는다.")
+    print("2. 연유를 30ml 넣는다.")
+    print("3. 찬 우유를 넣는다.")
+    print("4. 에스프레소샷을 넣는다.")
 
-city = "Seoul"
-apikey = "f3ed5a84ece8020fb14cc0002ef18cf1"
-lang = "kr"
+def make_blueberry_smoothie():
+    print("1. 블루베리 20g을 넣는다.")
+    print("2. 우유 300ml를 넣는다.")
+    print("3. 얼음을 넣는다.")
+    print("4. 믹서기에 간다.")
 
-api = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={apikey}&lang={lang}&units=metric"
+def make_simple_latte():
+    print("1. 커피를 넣는다.")
+    print("2. 우유를 넣는다.")
+    print("3. 신나게 섞는다.")
 
-result = requests.get(api)
-data = json.loads(result.text)
-
-print(data["name"],"의 날씨입니다.")
-print("날씨는 ",data["weather"][0]["description"],"입니다.")
-print("현재 온도는 ",data["main"]["temp"],"입니다.")
-print("하지만 체감 온도는 ",data["main"]["feels_like"],"입니다.")
-print("최저 기온은 ",data["main"]["temp_min"],"입니다.")
-print("최고 기온은 ",data["main"]["temp_max"],"입니다.")
-print("습도는 ",data["main"]["humidity"],"입니다.")
-print("기압은 ",data["main"]["pressure"],"입니다.")
-print("풍향은 ",data["wind"]["deg"],"입니다.")
-print("풍속은 ",data["wind"]["speed"],"입니다.")
+make_simple_latte()
+make_blueberry_smoothie()
+make_dolcelatte()
+make_dolcelatte()

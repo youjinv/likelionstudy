@@ -1,4 +1,8 @@
-import requests
+import random
 
-print(requests.get)
-#요청을 보내는 기능, 요청과 응답은 항상 붙어다님
+lunch = random.choice(["된장찌개","피자","제육볶음"])
+lunch = "냉장고"
+dinner = random.choice(["김밥","쫄면","돈까스"])
+
+print(lunch)
+print(dinner)

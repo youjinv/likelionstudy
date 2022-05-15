@@ -1,18 +1,10 @@
-import requests
-from bs4 import BeautifulSoup
+import random
 
-url = "http://www.daum.net/"
-response = requests.get(url)
-# print(response.text)
+food = random.choice(["된장찌개","피자","제육볶음"])
 
-#soup = BeautifulSoup(response.text, 'html.parser')
-#span이 안 뜰 때
-soup = BeautifulSoup(response.content, 'html.parser', from_encoding='cp949')
-response.encoding = 'utf-8'
-
-print(soup.title)
-print(soup.title.string)
-print(soup.span)
-print(soup.findAll('span'))
-
-#span안 뜸
+print(food)
+if(food == "제육볶음"):
+    print("곱배기 주세요")
+else:
+    print("그냥 주세요")
+print("종료")

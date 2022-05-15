@@ -1,9 +1,7 @@
-import requests
-from bs4 import BeautifulSoup
+foods = ["된장찌개", "피자", "제육볶음"]
+foods_set1 = set(foods)
+foods_set2 = set(["된장찌개", "피자", "제육볶음"])
+print(foods_set1)
+print(foods_set2)
 
-url = "http://www.daum.net/"
-response = requests.get(url)
-print(type(response.text))
-
-print(type(BeautifulSoup(response.text, 'html.parser')))
-
+#집합은 순서를 보장하지 않음

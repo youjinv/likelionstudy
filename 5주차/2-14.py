@@ -1,16 +1,10 @@
-from bs4 import BeautifulSoup
-import requests
-from datetime import datetime
+#set_lunch = set(["된장찌개", "피자", "제육볶음", "짜장면"])
+#item = "짜장면"
+#print(set_lunch - set([item]))
+#set_lunch = set_lunch - set([item])
+#print(set_lunch)
 
-url = "http://www.daum.net/"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-rank = 1
-
-results = soup.findAll('a','link_favorsch')
-
-print(datetime.today().strftime("%Y년 %m월 %d일의 실시간 검색어 순위입니다.\n"))
-
-for result in results:
-    print(rank,"위 : ",result.get_text(),"\n")
-    rank += 1
+set_dinner = set(["된장찌개", "피자", "제육볶음", "짜장면"])
+food = "짜장면"
+set_dinner = set_dinner - set([food])
+print(set_dinner)

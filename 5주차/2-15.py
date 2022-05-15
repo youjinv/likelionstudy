@@ -1,19 +1,36 @@
-from bs4 import BeautifulSoup
-import requests
-from datetime import datetime
+import random
+import time
 
-url = "http://www.daum.net/"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-rank = 1
+lunch = ["된장찌개", "피자", "제육볶음", "짜장면"]
 
-results = soup.findAll('a','link_favorsch')
+while True:
+    print(lunch)
+    item = input("음식을 추가 해주세요 : ")
+    if(item == "q"):
+        break
+    else:
+        lunch.append(item)
+print(lunch)
 
-search_rank_file = open("rankresult.txt","a")
+set_lunch = set(lunch)
+while True:
+    print(set_lunch)
+    item = input("음식을 삭제해주세요 : ")
+    if(item == "q"):
+        break
+    else:
+        set_lunch = set_lunch - set([item])
 
-print(datetime.today().strftime("%Y년 %m월 %d일의 실시간 검색어 순위입니다.\n"))
+print(set_lunch, "중에서 선택합니다.")
+print("5")
+time.sleep(1)
+print("4")
+time.sleep(1)
+print("3")
+time.sleep(1)
+print("2")
+time.sleep(1)
+print("1")
+time.sleep(1)
 
-for result in results:
-    search_rank_file.write(str(rank)+"위:"+result.get_text()+"\n")
-    print(rank,"위 : ",result.get_text(),"\n")
-    rank += 1
+print(random.choice(list(set_lunch)))

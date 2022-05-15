@@ -1,17 +1,5 @@
-from bs4 import BeautifulSoup
-import requests
-
-url = "http://www.daum.net/"
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'html.parser')
-
-file = open("2-12.html", "w")
-file.write(response.text)
-file.close()
-
-print(soup.title)
-print(soup.title.string)
-print(soup.span)
-print(soup.findAll('span'))
-
-#html 안 뜸
+lunch = ["된장찌개", "피자", "제육볶음", "짜장면"]
+while True:
+    item = input("음식을 추가 해주세요 : ")
+    lunch.append(item)
+    print(lunch)

@@ -1,8 +1,15 @@
-import requests
+total_list = []
 
-city = "Seoul"
-apikey = "f3ed5a84ece8020fb14cc0002ef18cf1"
-api = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={apikey}"
+while True:
+    question = input("질문을 입력해주세요 : ")
+    if question == "q":
+        break
+    else:
+        total_list.append{"질문" : question, "답변" : ""}
 
-result = requests.get(api)
-print(result.text)
+for i in total_dictionary:
+    print(i)
+    answer = input("답변을 입력해주세요 : ")
+    total_dictionary[i] = answer
+print(total_dictionary)
+

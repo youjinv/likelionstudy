@@ -1,31 +1,29 @@
-import requests
-import json
+total_dictionary = {}
 
-city = "Seoul"
-apikey = "f3ed5a84ece8020fb14cc0002ef18cf1"
-api = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={apikey}"
+while True:
+    question = input("질문을 입력해주세요 : ")
+    if question == "q":
+        break
+    else:
+        total_dictionary[question] = ""
 
-result = requests.get(api)
-print(result.text)
+for i in total_dictionary:
+    print(i)
+    answer = input("답변을 입력해주세요 : ")
+    total_dictionary[i] = answer
+print(total_dictionary)
 
-data = json.loads(result.text)
+total_list = []
+while True:
+    question = input("질문을 입력해주세요 : ")
+    if question == "q":
+        break
+    else:
+        total_list.append({"질문" : question, "답변" : ""})
 
-#print(type(result.text))
-#print(type(data))
 
-print(data["name"],"의 날씨입니다.")
-print("날씨는 ",data["weather"][0]["description"],"입니다.")
-print("현재 온도는 ",data["main"]["temp"],"입니다.")
-print("하지만 체감 온도는 ",data["main"]["feels_like"],"입니다.")
-# 최저 기온 : main - temp_min
-print("최저 기온은 ",data["main"]["temp_min"],"입니다.")
-# 최고 기온 : main - temp_max
-print("최고 기온은 ",data["main"]["temp_max"],"입니다.")
-# 습도 : main - humidity
-print("습도는 ",data["main"]["humidity"],"입니다.")
-# 기압 : main - pressure
-print("기압은 ",data["main"]["pressure"],"입니다.")
-# 풍향 : wind - deg
-print("풍향은 ",data["wind"]["deg"],"입니다.")
-# 풍속 : wind - speed
-print("풍속은 ",data["wind"]["speed"],"입니다.")
+for i in total_list:
+    print(i["질문"])
+    answer = input("답변을 입력해주세요 : ")
+    i["답변"] = answer
+print(total_list)
